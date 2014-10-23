@@ -51,7 +51,7 @@
  *   teaser listings.
  * - $id: Position of the node. Increments each time it's output.
  *
- * Node status variables:
+ * Node status variables: *
  * - $view_mode: View mode; for example, "full", "teaser".
  * - $teaser: Flag for the teaser state (shortcut for $view_mode == 'teaser').
  * - $page: Flag for the full page state.
