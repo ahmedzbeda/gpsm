@@ -51,7 +51,7 @@
  *   teaser listings.
  * - $id: Position of the node. Increments each time it's output.
  *
- * Node status variables: *
+ * Node status variables: **
  * - $view_mode: View mode; for example, "full", "teaser".
  * - $teaser: Flag for the teaser state (shortcut for $view_mode == 'teaser').
  * - $page: Flag for the full page state.
@@ -144,7 +144,7 @@
                                 <p class="v_date">
                             <?php print strip_tags(render($content['field_latest_update_date'])); ?> <?php print strip_tags(render($content['field_version'])); ?>
                                 </p><br>
-                                <p class="log" ><a href="#"><?php print t('Change Log') ?></a></p>
+                                <p class="log" ><a href="#clog" data-toggle="modal" ><?php print t('Change Log') ?></a></p>
                             </div>
                         </div>
                     </div>
@@ -190,22 +190,28 @@
                         <div id="the_price">
                             <p>$<?php $value = strip_tags(render($content['field_product_reference'])); echo $value/100; ?></p>
                         </div>
-                        <ul>
-                            <li><a href="<?php echo url('node/' . 11); ?>"><?php print t('Privacy Policy'); ?></a> </li>
-                            <li><a href="<?php echo url('node/' . 12); ?>"><?php print t('Terms of Use'); ?></a> </li>
-                            <li><a href="<?php echo url('node/' . 13); ?>"><?php print t('Shipping details'); ?></a> </li>
-                        </ul>
+                        <div id="privacy">
+						<?php print render($map_product_privacy); ?>                        
+                        </div>
+ 
                     </div>
                     <div class="buy_button col-md-5 col-md-offset-2">
                         <a href="<?php echo url('node/' . $nn); ?>"><?php print t('Buy License'); ?></a>
-                        <div class="paypal">
-                        </div>
+							
+							<ul class="payment_logos">
+							<li><img src="<?php print $GLOBALS['base_url']; ?>/<?php print $directory; ?>/img/2checkout.png"></li>	
+							<li><img src="<?php print $GLOBALS['base_url']; ?>/<?php print $directory; ?>/img/paypal.png"></li>
+							<li><img src="<?php print $GLOBALS['base_url']; ?>/<?php print $directory; ?>/img/cashondelivery.png"></li>														
+							</ul>
+							
                     </div>
                 </div>
             </div>
         </div>
+        
+        
+        
 <div class="modal fade" id="subscriptionform" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-<form action="index.php" method="post">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -236,6 +242,22 @@
       </div>
     </div>
   </div>
-</form>
 </div>
+
+
+<div class="modal fade" id="clog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">Changes Log</h4>
+			</div>
+			<div class="modal-body">
+				<?php print render($map_product_log); ?>
+			</div>
+			<div class="modal-footer">
+			</div>
+		</div>
+	</div>
+</div>                        
         

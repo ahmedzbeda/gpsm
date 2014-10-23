@@ -10,6 +10,8 @@ base theme = bootstrap
 
 regions[main_menu]     = 'Main Menu'
 regions[map_product_other_maps]     = 'map product other maps'
+regions[map_product_privacy]    = 'map product privacy'
+regions[map_product_log]    = 'map product log'
 
 
 regions[navigation]     = 'Navigation'

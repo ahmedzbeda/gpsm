@@ -56,3 +56,21 @@ function hook_preprocess_page(&$variables) {
         }
 }
 
+
+
+
+function gpsmapping_preprocess_node(&$vars) {
+     if ($blocks = block_get_blocks_by_region('map_product_privacy')) {
+      $vars['map_product_privacy'] = $blocks;
+  }  
+     if ($blocks = block_get_blocks_by_region('map_product_log')) {
+      $vars['map_product_log'] = $blocks;
+  }  
+}
+
+
+
+
+
+
+

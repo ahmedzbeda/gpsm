@@ -664,10 +664,10 @@ html, body {
     font-size: 165px;
     margin-bottom: -34px;
 }
-#buy_the_map ul li {
+#privacy ul li {
     float: left;
 }
-#buy_the_map ul li a {
+#privacy ul li a {
 	display: block;
 	text-decoration: none;
 	line-height: 10px;
@@ -677,7 +677,7 @@ html, body {
 	font-size: 12px;
 	font-family: pl;
 }
-#buy_the_map ul li:last-child a {
+#privacy ul li:last-child a {
     border-right: 0px solid #ffffff;
 }
 .buy_button a {
@@ -725,6 +725,18 @@ html, body {
 	margin-top: 10px;
 	display: block;
 }
+
+.payment_logos {
+	height: 45px;
+}
+
+.payment_logos li {
+	line-height: 45px;
+	margin-right: 10px;
+	margin-top: 10px;
+	float: left;
+}
+
 @media (min-width: 1200px) {
     .container {
         width: 960px !important;
