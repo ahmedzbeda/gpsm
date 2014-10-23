@@ -68,6 +68,9 @@ function gpsmapping_preprocess_node(&$vars) {
   }  
 }
 
+function gpsmapping_preprocess_html(&$variables) {
+	    $variables['footer_menu_2'] = block_get_blocks_by_region('footer_menu_2');
+}
 
 
 

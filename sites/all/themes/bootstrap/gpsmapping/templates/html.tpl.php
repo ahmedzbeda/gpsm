@@ -133,16 +133,11 @@
         <div class="container">
             <div class="row" >
                 <div class=" col-sm-7 col-xs-12">
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Terms & Serves</a></li>
-                        <li><a href="#">Policy & Privacy</a></li>
-                        <li><a href="#">Shipping details</a></li>
-                    </ul>
+					<?php echo render($footer_menu_2) ?>
                 </div>
                 <div class="col-sm-5  col-xs-12">
                     <p>
-                        All rights reserved © 2014. Designed by Wazer, LLC
+                        <?php print t('All rights reserved © 2014. Designed by Wazer, LLC'); ?>
                     </p>
                 </div>
             </div>

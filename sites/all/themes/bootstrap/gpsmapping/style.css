@@ -503,7 +503,7 @@ html, body {
 .country_price{
     margin-top: 80px;
 }
-.inside_wrap h2 {
+.country_price h2 {
     font-family: pr;
     font-size: 50px;
     text-transform: uppercase;
@@ -736,6 +736,56 @@ html, body {
 	margin-top: 10px;
 	float: left;
 }
+
+#clog .modal-title {
+	margin-top: 20px;
+	font-size: 23px;
+	text-align: center;
+	color: #59b671;
+	font-family: pr;
+}
+
+#clog .modal-header {
+	border: none !important;
+}
+
+.view-changes-log .views-field-title {
+	margin-top: 20px;
+	text-align: left;
+	color: #59b671;
+	font-family: pr;
+}
+
+#clog .views-field-body {
+	line-height: 180%;
+	text-align: justify;
+	margin-top: 10px;
+	margin-left: 10px;
+	font-size: 13px;
+	font-family: pr;
+	color: #999;
+}
+
+#clog .views-field-field-changes-details {
+	line-height: 180%;
+	margin-top: 10px;
+	margin-left: 10px;
+	font-size: 13px;
+	color: #999;
+	font-family: pr;	
+}
+
+
+#clog .views-field-field-changes-details li {
+	list-style: inside;
+	list-style-type: square;
+}
+
+#clog .views-label {
+	font-weight: bold;
+	font-family: ps;
+}
+
 
 @media (min-width: 1200px) {
     .container {
