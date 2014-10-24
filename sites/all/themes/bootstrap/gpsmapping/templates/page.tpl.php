@@ -75,23 +75,30 @@
 ?>
 
 
+
+            <div id="banner_wrap">
+                <div id="banner">
+                    <div class="shade_layer">
+                        <div class="container" >
+                            <div class="h_menu" >
+                                <h1 id="logo">
+                                    <a href="<?php print $front_page; ?>"><?php print $title; ?></a>
+                                </h1>
+								<?php print render($page['main_menu']); ?>	
+                            </div>
+							<?php if($is_front) { ?>
+							<div class="africa_map" >
+                            <a id='libya_map' href="#"> Libya map</a>
+                        </div>                            
+							<?php ;} ?>
+                        </div>
+                    </div>
+                </div>
+            </div>                                    
+
 <div class="main-container container">
 
-  <header role="banner" id="page-header">
-    <?php if (!empty($site_slogan)): ?>
-      <p class="lead"><?php print $site_slogan; ?></p>
-    <?php endif; ?>
-
-    <?php print render($page['header']); ?>
-  </header> <!-- /#page-header -->
-
   <div class="row">
-
-    <?php if (!empty($page['sidebar_first'])): ?>
-      <aside class="col-sm-3" role="complementary">
-        <?php print render($page['sidebar_first']); ?>
-      </aside>  <!-- /#sidebar-first -->
-    <?php endif; ?>
 
     <section<?php print $content_column_class; ?>>
       <?php if (!empty($page['highlighted'])): ?>
@@ -105,9 +112,6 @@
       <?php endif; ?>
       <?php print render($title_suffix); ?>
       <?php print $messages; ?>
-      <?php if (!empty($tabs)): ?>
-        <?php print render($tabs); ?>
-      <?php endif; ?>
       <?php if (!empty($page['help'])): ?>
         <?php print render($page['help']); ?>
       <?php endif; ?>
@@ -117,14 +121,9 @@
       <?php print render($page['content']); ?>
     </section>
 
-    <?php if (!empty($page['sidebar_second'])): ?>
-      <aside class="col-sm-3" role="complementary">
-        <?php print render($page['sidebar_second']); ?>
-      </aside>  <!-- /#sidebar-second -->
-    <?php endif; ?>
-
   </div>
 </div>
 <footer class="footer container">
   <?php print render($page['footer']); ?>
 </footer>
+

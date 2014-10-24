@@ -67,10 +67,11 @@
               <div id="top_header" class="">
                 <div class="container">
                     <ul>
-                        <li> <a href="#">Data submission</a></li>
-                        <li> <a href="#">Contacts</a></li>
-                        <li> <a href="#" class="login">Login</a></li>
+                        <li> <a href="#"><?php print t('Data submission'); ?></a></li>
+                        <li> <a href="#"><?php print t('Contacts'); ?></a></li>
+                        <li> <a href="#" class="login"><?php print t('Login'); ?></a></li>
                     </ul>
+					<?php echo render($header) ?>                    
                 </div>
             </div>
 
@@ -87,26 +88,12 @@
         <div class="container" >
             <div class="row">
                 <div id="footer_menu_1" class="col-sm-2 col-xs-6">
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">What's GPS</a></li>
-                    </ul>
-
+					<?php echo render($footer_menu_1) ?>
                 </div>
-                <div id="footer_menu_2" class="col-sm-2 col-xs-6">
-                    <ul>
-                        <li><a href="#">Downloadable Maps</a></li>
-                        <li><a href="#">Printed Maps</a></li>
-                        <li><a href="#">GPS Devices</a></li>
-                        <li><a href="#">Accesories</a></li>
-                        <li><a href="#">Date Submission</a></li>
-                    </ul>
-
+                <div id="footer_menu_2" class="col-sm-3 col-xs-6">
+					<?php echo render($footer_menu_2) ?>
                 </div>
-                <div id="footer_3" class="col-sm-5 col-md-offset-3">
+                <div id="footer_3" class="col-sm-5 col-md-offset-2">
 
                     <div id="newsletter">
                         <p> Sign up for our Newsletter</p>
@@ -118,10 +105,10 @@
                     <div id="social_icons">
                         <ul>
                             <li> Follow Us</li>
-                            <li><a class="facebook" href="#">facebook GPS mapping</a> </li>
-                            <li><a class="twitter" href="#">twitter GPS mapping</a> </li>
-                            <li><a class="google" href="#"> google GPS mapping </a></li>
-                            <li><a class="rss" href="#">rss GPS mapping </a></li>
+                            <li><a class="facebook" href="#">Facebook GPS mapping</a> </li>
+                            <li><a class="twitter" href="#">Twitter GPS mapping</a> </li>
+                            <li><a class="google" href="#"> Google GPS mapping </a></li>
+                            <li><a class="rss" href="#">RSS GPS mapping </a></li>
                         </ul>
                     </div>
                 </div>
@@ -133,7 +120,7 @@
         <div class="container">
             <div class="row" >
                 <div class=" col-sm-7 col-xs-12">
-					<?php echo render($footer_menu_2) ?>
+						<?php echo render($footer_menu_3) ?>
                 </div>
                 <div class="col-sm-5  col-xs-12">
                     <p>

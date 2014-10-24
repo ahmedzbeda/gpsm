@@ -4,7 +4,7 @@ Theme URI: http://www.wazer.ly
 Author: Wazer
 Author URI: http://www.wazer.ly
 */
-@import "css/reset.css";
+
 @font-face {
     font-family: pr;
     src: url("fonts/pr.otf");
@@ -17,13 +17,28 @@ Author URI: http://www.wazer.ly
     font-family: pl;
     src: url("fonts/pl.otf");
 }
+
 html, body {
     width: 100%;
-    font-family: ps;
+    font-family: pl;
 }
 .clear {
 	clear: both;
 }
+li {
+	list-style: none;
+}
+
+a {
+color: #59b671;
+text-decoration: none;
+}
+
+h1 {
+	font-size: 50px;
+	font-family: pl;
+}
+
 .container {
     position: relative;
 }
@@ -36,6 +51,7 @@ html, body {
 #top_header ul {
     float: right;
     list-style: none;
+    margin-bottom: 0px;
 }
 #top_header ul li {
     float: left;
@@ -69,20 +85,17 @@ html, body {
 }
 #banner_wrap {
     position: relative;
-    height:425px;
 }
 #banner{
-    height: 425px;
+    max-height: 425px;
     width: 100%;
     background: url('img/home_header_banner_bg.jpg') center center;
     background-size:  auto 100%;
-    position: absolute;
     overflow:hidden;
 }
 .shade_layer{
-    width: 100%;
-    height: 100%;
     background: url(img/home_header_banner_sheda.png);
+    height: 100%;
 }
 .africa_map {
     background: url(img/home_banner_africa.png) no-repeat;
@@ -132,6 +145,10 @@ html, body {
     display: block;
     background: url(img/home_logo.png) center center;
     text-indent: -9999px;
+}
+
+.statistics_counter {
+	display: none !important;
 }
 #bottom_header_wrap {
     width: 100%;
@@ -785,6 +802,78 @@ html, body {
 	font-weight: bold;
 	font-family: ps;
 }
+
+
+.main-container {
+	padding: 50px 0;
+	min-height: 400px;
+}
+
+
+.node-type-gps-map-base .page-header {
+	font-size: 20px;
+	color: #888;
+	font-family: pl;
+}
+
+.node-type-gps-map-base .form-item-line-item-fields-field-unit-id-lit-und-0-value  {
+	font-size: 49px;
+}
+
+.node-type-gps-map-base .form-item-line-item-fields-field-unit-id-lit-und-0-value input  {
+	text-align: center;
+	height: 104px;
+	font-size: 74px;
+}
+
+.node-type-gps-map-base .form-submit {
+	font-size: 15px;
+	margin: 0 auto;
+	text-align: center;
+	display: block;
+	margin-top: 30px;	
+}
+
+.form-required {
+	color: #d00800;
+}
+
+.commerce-checkout-progress  {
+	margin-left: 0;
+	padding: 0;	
+	margin-bottom: 20px;
+}	
+
+.commerce-checkout-progress li {
+	float: left;
+	padding-bottom: 10px;
+	padding-right: 40px;
+	color: #aaa;
+	line-height: 25px;
+}
+
+.commerce-checkout-progress li.active {
+	font-size: 25px;
+	color: #000;
+}
+
+.page-header {
+	font-family: pl;
+}
+
+.btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active, .open .dropdown-toggle.btn-info {
+	color: #fff;
+	background-color: #333 !important;
+	border: none;
+}
+
+.btn-info {
+	color: #fff;
+	background-color: #59b671 !important;	
+	border: none;
+}
+
+
 
 
 @media (min-width: 1200px) {
