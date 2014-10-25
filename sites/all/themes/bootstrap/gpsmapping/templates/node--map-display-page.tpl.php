@@ -87,10 +87,10 @@
                                     <div id="big_button" class="col-md-3">
 	                                    <?php $nn = strip_tags(render($content['field_map_display_base']));  ?>
                                         <a href="<?php echo url('node/' . $nn); ?>">
-	                                       <?php print t('Buy for $'); ?><?php $value = strip_tags(render($content['field_product_reference'])); echo $value/100; ?>
+	                                       <?php print t('Buy License for $'); ?><?php $value = strip_tags(render($content['field_product_reference'])); echo $value/100; ?>
                                         </a>
                                     </div>
-                                <div class="col-md-10 col-md-offset-1">
+                                <div class="col-md-11 col-md-offset-1">
                                     <p>
 										<?php print strip_tags(render($content['field_map_description'])); ?>
                                     </p>

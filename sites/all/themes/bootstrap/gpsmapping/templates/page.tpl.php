@@ -111,6 +111,12 @@
         <h1 class="page-header"><?php print $title; ?></h1>
       <?php endif; ?>
       <?php print render($title_suffix); ?>
+      
+		<?php if (arg(0) == 'user' && is_numeric(arg(1))) {
+		print render($tabs);
+		} ?>      
+
+
       <?php print $messages; ?>
       <?php if (!empty($page['help'])): ?>
         <?php print render($page['help']); ?>

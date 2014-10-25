@@ -64,17 +64,24 @@
 </head>
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
   
-              <div id="top_header" class="">
+            <div id="top_header">
                 <div class="container">
-                    <ul>
-                        <li> <a href="#"><?php print t('Data submission'); ?></a></li>
-                        <li> <a href="#"><?php print t('Contacts'); ?></a></li>
-                        <li> <a href="#" class="login"><?php print t('Login'); ?></a></li>
-                    </ul>
-					<?php echo render($header) ?>                    
+	                <div class="row nomr">
+		                <div class="col-md-4 col-md-offset-4 nom">
+		                    <ul id="top_menu">
+			                    <?php if(!$logged_in) { ?>
+		                        <li><a href="#login" data-toggle="modal"><?php print t('Log In / Sign Up'); ?></a></li>
+		                        <?php } else { ?>
+		                        <li><a href="<?php print $GLOBALS['base_url']; ?>/user/logout"><?php print t('Log Out'); ?></a></li>		                        
+		                        <?php } ?>
+		                    </ul>
+		                </div>
+		                <div class="col-md-4 nom">
+							<?php echo render($header) ?> 			                
+		                </div>
+	                </div>
                 </div>
             </div>
-
   
   
   
@@ -130,6 +137,23 @@
             </div>
         </div>
     </div>
+  
+
+
+  <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  	<div class="modal-dialog">
+  		<div class="modal-content">
+  			<div class="modal-header">
+  				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  				<h4 class="modal-title"><?php print t('Log In'); ?></h4>
+  			</div>
+  			<div class="modal-body">
+  				<?php echo render($login); ?>
+  			</div>
+  		</div>
+  	</div>
+  </div>
+  
   
 </body>
 </html>

@@ -1,18 +1,17 @@
 <?php
-
 /**
  * @file
  * template.php
  */
 
 
+ 
 function gpsmapping_preprocess_page(&$variables, $hook) {
 
    if (isset($variables['node'])) {
 		$variables['theme_hook_suggestions'][] = 'page__type__'. $variables['node']->type;
-		$variables['theme_hook_suggestions'][] = "page__node__" . $variables['node']->nid;	
+		$variables['theme_hook_suggestions'][] = "page__node__" . $variables['node']->nid;
    }
-
    if (module_exists('path')) {
     $alias = drupal_get_path_alias(str_replace('/edit','',$_GET['q']));
     if ($alias != $_GET['q']) {
@@ -23,8 +22,6 @@ function gpsmapping_preprocess_page(&$variables, $hook) {
       }
     }
    }
-   
-   
   function gpsmapping_js_alter(&$javascript) {
   $jquery_path = drupal_get_path('theme','gpsmapping') . '/js/jquery-1.11.1.min.js';
   $javascript[$jquery_path] = $javascript['misc/jquery.js'];
@@ -33,46 +30,35 @@ function gpsmapping_preprocess_page(&$variables, $hook) {
   $javascript[$jquery_path]['data'] = $jquery_path;
   //Then we remove the Drupal core version
   unset($javascript['misc/jquery.js']);
-  }   
-   
+  }
   $options = array(
     'group' => JS_THEME,
   );
-  drupal_add_js(drupal_get_path('theme', 'gpsmapping'). '/js/bootstrap.min.js', $options);  
-
-
-
-
+  drupal_add_js(drupal_get_path('theme', 'gpsmapping'). '/js/bootstrap.min.js', $options);
 }
-
 function gpsmapping_menu_tree__main_menu($variables) {
   return '<ul id="header_menu">' . $variables['tree'] . '</ul>';
 }
-
-
 function hook_preprocess_page(&$variables) {
         if (arg(0) == 'node') {
                 $variables['node_content'] =& $variables['page']['content']['system_main']['nodes'][arg(1)];
         }
 }
-
-
-
-
 function gpsmapping_preprocess_node(&$vars) {
      if ($blocks = block_get_blocks_by_region('map_product_privacy')) {
       $vars['map_product_privacy'] = $blocks;
-  }  
+  }
      if ($blocks = block_get_blocks_by_region('map_product_log')) {
       $vars['map_product_log'] = $blocks;
-  }  
+  }
 }
-
 function gpsmapping_preprocess_html(&$variables) {
 	    $variables['footer_menu_1'] = block_get_blocks_by_region('footer_menu_1');
 	    $variables['footer_menu_2'] = block_get_blocks_by_region('footer_menu_2');
-	    $variables['footer_menu_3'] = block_get_blocks_by_region('footer_menu_3');	    	    
-	    $variables['header'] = block_get_blocks_by_region('header');	    	    
+	    $variables['footer_menu_3'] = block_get_blocks_by_region('footer_menu_3');
+	    $variables['header'] = block_get_blocks_by_region('header');
+	    $variables['login'] = block_get_blocks_by_region('login');
+
 }
 
 
@@ -82,3 +68,18 @@ function gpsmapping_menu_tree(&$variables) {
 
 
 
+function gpsmapping_theme(&$existing, $type, $theme, $path) {
+   $hooks['user_login_block'] = array(
+     'template' => 'templates/user-login-block',
+     'render element' => 'form',
+   );
+   return $hooks;
+ }
+ 
+function gpsmapping_preprocess_user_login_block(&$vars) {
+  $vars['name'] = render($vars['form']['name']);
+  $vars['pass'] = render($vars['form']['pass']);
+  unset($vars['form']['links']);  
+  $vars['submit'] = render($vars['form']['actions']['submit']);
+  $vars['rendered'] = drupal_render_children($vars['form']);
+}
