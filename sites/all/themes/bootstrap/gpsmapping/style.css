@@ -1028,9 +1028,31 @@ color: #777;
 	border-right: 1px solid #eee;
 }
 
-.commerce-product-sku-label {
+.view-confirm-message-product-display .commerce-product-sku-label {
+	float: left;
+	margin-right: 10px;
 }
 
+.view-confirm-message-product-display .commerce-product-title-label {
+	float: left;
+	margin-right: 10px;
+}
+
+.view-confirm-message-product-display .button-wrapper {
+	float: right;
+	width: 40%;
+	text-align: center;
+}
+
+.view-confirm-message-product-display .checkout {
+	color: #fff;
+	padding: 10px 0;
+	background: #59b671 !important;
+	display: block;
+	border-radius: 3px;
+	margin: 20px;
+	text-decoration: none;
+}
 
 @media (min-width: 1200px) {
     .container {
