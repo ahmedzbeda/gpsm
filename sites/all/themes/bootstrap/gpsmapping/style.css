@@ -1002,35 +1002,12 @@ color: #777;
 	margin-bottom: 40px;
 }
 
-.alert {
-    background: none repeat scroll 0% 0% #FFF;
-    border: 1px solid #CCC;
-    position: absolute;
-    height: 300px;
-    box-shadow: 0px 0px 14px #CCC;
-    top: 0px;
-    width: 60%;
-    margin-left: -30%;
-    left: 50%;
-    top: 50px;
-}
-
-.alert .message-inner {
-	height: 100%;
-	display: block;
-}
 
 .added-product-title {
 	font-size: 25px;
 	border-bottom: 1px solid #EEE;
 	padding-bottom: 10px;
 	margin-bottom: 30px;
-}
-
-.view-id-confirm_message_product_display {
-	float: left;
-	width: 60%;
-	border-right: 1px solid #eee;
 }
 
 .view-confirm-message-product-display .commerce-product-sku-label {
