@@ -74,49 +74,123 @@
  */
 ?>
 
+            <div id="banner_wrap">
+                <div id="banner">
+                    <div class="shade_layer">
+                        <div class="container" >
+                            <div class="h_menu" >
+                                <h1 id="logo">
+                                    <a href="<?php print $front_page; ?>"><?php print $title; ?></a>
+                                </h1>
+								<?php print render($page['main_menu']); ?>	
+                            </div>
+							<?php if($is_front) { ?>
+							<div class="africa_map" >
+                            <a id='libya_map' href="#"> Libya map</a>
+                        </div>                            
+							<?php ;} ?>
+                        </div>
+                    </div>
+                </div>
+            </div>                                    
 
-<div class="main-container container">
+        <div id="bottom_header_wrap">
+            <div id="bottom_header">
+                <div class="container">
+					<?php print render($page['bottom_header']); ?>	
+                </div>
+            </div>
+        </div>
+        <div id="services_wrap">
+            <div class="container">
+                <div class="row">
+                    <div id="download_serv" class="col-sm-4">
+                        <a href="" title="GPS mapping"><img src="img/home_services_map_icon.jpg" alt="GPS mapping"/></a>
+                        <h3><a href="#"> DOWNLOAD MAPS</a></h3>
+                        <P> It is a long established fact that a reader will be distracted by the readable content of a page </P>
+                    </div>
+                    <div id="device_serv" class="col-sm-4">
+                        <a href="#" title="GPS mapping"> <img src="img/home_services_device_icon.jpg" alt="GPS mapping"/></a>
+                        <h3><a href="#">BUY A DEVICE</a></h3>
+                        <P> It is a long established fact that a reader will be distracted by the readable content of a page </P>
+                    </div>
+                    <div id="latest_update" class="col-sm-4">
+                        <h3>LATEST UPDATES</h3>
+                        <ul>
+                            <li><a href="#">Libya Map 3.4</a> </li>
+                            <li><a href="#">Tunisia Map 3.4</a> </li>
+                            <li><a href="#">Gambia Printed Map 2.0</a> </li>
+                            <li><a href="#">Libya Map 3.4</a> </li>
+                            <li><a href="#">Libya Map 3.4Libya Map 3.4</a> </li>
+                            <li><a href="#">Libya Map 3.4Libya Map 3.4</a> </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div id="testimonial_wrp">
+            <div class="container">
+                <div class="row col-md-12">
+                    <h3> Testimonials</h3>
+                    <div class="testimonial_content">
+                        <div class="testimonial_content_img"                               
+                             style="
+                             background: url(img/me.jpg);" >
+                        </div>
+                        <div class="testimonial_content_text">
+                            <p>“ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  ”</p>
+                            <p class="testimonial_name">- Mohammad AboGhrara</p>
+                        </div>
+                    </div>
+                    <div class="testimonial_track hidden-sm hidden-xs">
+                        <div class="dot">
+                            <div id="dot_1">
+                                <a class="active_dot" href="#"></a>                                
+                            </div>
+                            <div id="dot_2">
+                                <a class="active_dot" href="#"></a>                                
+                            </div>
+                            <div id="dot_3">
+                                <a class="active_dot" href="#"></a>                                
+                            </div>
+                            <div id="dot_4">
+                                <a class="active_dot" href="#"></a>                                
+                            </div>
+                            <div class="testimonial_polygon_1 testimonial_polygon_style">
+                                <p> He used the map in Libya</p>
+                                <div class="polygon_triangle">
+                                </div>
+                            </div>
+                            <div class="testimonial_polygon_2 testimonial_polygon_style">
+                                <p> He used the map in Libya</p>
+                                <div class="polygon_triangle">
+                                </div>
+                            </div>
+                            <div class="testimonial_polygon_3 testimonial_polygon_style">
+                                <p> He used the map in Libya</p>
+                                <div class="polygon_triangle">
+                                </div>
+                            </div>
+                            <div class="testimonial_polygon_4 testimonial_polygon_style">
+                                <p> He used the map in Libya</p>
+                                <div class="polygon_triangle">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+    <div id="partners_wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">  
+                    <img src="img/home_partners.jpg" class="img-responsive">
+                </div>
+            </div>
+        </div>
+    </div>
 
-  <div class="row">
-
-    <?php if (!empty($page['sidebar_first'])): ?>
-      <aside class="col-sm-3" role="complementary">
-        <?php print render($page['sidebar_first']); ?>
-      </aside>  <!-- /#sidebar-first -->
-    <?php endif; ?>
-
-    <section<?php print $content_column_class; ?>>
-      <?php if (!empty($page['highlighted'])): ?>
-        <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
-      <?php endif; ?>
-      <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
-      <a id="main-content"></a>
-      <?php print render($title_prefix); ?>
-      <?php if (!empty($title)): ?>
-        <h1 class="page-header"><?php print $title; ?></h1>
-      <?php endif; ?>
-      <?php print render($title_suffix); ?>
-      <?php print $messages; ?>
-      <?php if (!empty($tabs)): ?>
-        <?php print render($tabs); ?>
-      <?php endif; ?>
-      <?php if (!empty($page['help'])): ?>
-        <?php print render($page['help']); ?>
-      <?php endif; ?>
-      <?php if (!empty($action_links)): ?>
-        <ul class="action-links"><?php print render($action_links); ?></ul>
-      <?php endif; ?>
-      <?php print render($page['content']); ?>
-    </section>
-
-    <?php if (!empty($page['sidebar_second'])): ?>
-      <aside class="col-sm-3" role="complementary">
-        <?php print render($page['sidebar_second']); ?>
-      </aside>  <!-- /#sidebar-second -->
-    <?php endif; ?>
-
-  </div>
-</div>
-<footer class="footer container">
-  <?php print render($page['footer']); ?>
-</footer>

@@ -17,6 +17,7 @@ regions[footer_menu_2]    = 'Footer Menu 2'
 regions[footer_menu_3]    = 'Footer Menu 3'
 regions[header]         = 'Top Bar'
 regions[login]         = 'login'
+regions[bottom_header]         = 'Home: Bottom Header'
 
 regions[navigation]     = 'Navigation'
 regions[highlighted]    = 'Highlighted'

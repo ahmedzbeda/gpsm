@@ -86,11 +86,6 @@
                                 </h1>
 								<?php print render($page['main_menu']); ?>	
                             </div>
-							<?php if($is_front) { ?>
-							<div class="africa_map" >
-                            <a id='libya_map' href="#"> Libya map</a>
-                        </div>                            
-							<?php ;} ?>
                         </div>
                     </div>
                 </div>
