@@ -942,6 +942,18 @@ color: #777;
 	font-family: pr;	
 }
 
+.btn-primary {
+    color: #FFF;
+    background-color: #555;
+    border-color: #333;
+}
+
+.btn-primary:hover {
+    color: #FFF;
+    background-color: #777;
+    border-color: #333;
+}
+
 #top_header .view-display-id-block {
 	background-image: url("img/picto_cart.png");
 	background-position: 8% 48%;
