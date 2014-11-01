@@ -71,9 +71,10 @@
 		                    <ul id="top_menu">
 			                    <?php if(!$logged_in) { ?>
 		                        <li><a href="#login" data-toggle="modal"><?php print t('Log In / Sign Up'); ?></a></li>
-		                        <?php } else { ?>
+		                        <?php } else { ?>		                        
+		                        <li><a href="<?php print $GLOBALS['base_url']; ?>/user"><?php print t('My Profile'); ?></a></li>			                        
 		                        <li><a href="<?php print $GLOBALS['base_url']; ?>/user/logout"><?php print t('Log Out'); ?></a></li>		                        
-		                        <?php } ?>
+		                        <?php } ?>           		                        
 		                    </ul>
 		                </div>
 		                <div class="col-md-4 nom">
@@ -131,7 +132,7 @@
                 </div>
                 <div class="col-sm-5  col-xs-12">
                     <p>
-                        <?php print t('All rights reserved © 2014. Designed by Wazer, LLC'); ?>
+                        <?php print t('All rights reserved © 2014. Design by <a title="Wazer IT" href="http://www.0.ly">Wazer IT</a>'); ?>
                     </p>
                 </div>
             </div>

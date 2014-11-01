@@ -9,6 +9,8 @@ base theme = bootstrap
 ;;;;;;;;;;;;;;;;;;;;;
 
 regions[main_menu]     = 'Main Menu'
+regions[sidebar_first]  = 'Primary'
+regions[sidebar_second] = 'Secondary'
 regions[map_product_other_maps]     = 'map product other maps'
 regions[map_product_privacy]    = 'map product privacy'
 regions[map_product_log]    = 'map product log'
@@ -18,14 +20,13 @@ regions[footer_menu_3]    = 'Footer Menu 3'
 regions[header]         = 'Top Bar'
 regions[login]         = 'login'
 regions[bottom_header]         = 'Home: Bottom Header'
+regions[Download_gps_maps]         = 'Home: Download GPS Map'
+regions[buy_a_device]         = 'Home: Buy a device'
+regions[home_latest_maps_updates]         = 'Home: Latest Updates'
 
-regions[navigation]     = 'Navigation'
-regions[highlighted]    = 'Highlighted'
+
 regions[help]           = 'Help'
 regions[content]        = 'Content'
-regions[sidebar_first]  = 'Primary'
-regions[sidebar_second] = 'Secondary'
-regions[footer]         = 'Footer'
 regions[page_top]       = 'Page top'
 regions[page_bottom]    = 'Page bottom'
 

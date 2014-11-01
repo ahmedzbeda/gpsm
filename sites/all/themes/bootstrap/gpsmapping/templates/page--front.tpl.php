@@ -105,25 +105,21 @@
             <div class="container">
                 <div class="row">
                     <div id="download_serv" class="col-sm-4">
-                        <a href="" title="GPS mapping"><img src="img/home_services_map_icon.jpg" alt="GPS mapping"/></a>
-                        <h3><a href="#"> DOWNLOAD MAPS</a></h3>
-                        <P> It is a long established fact that a reader will be distracted by the readable content of a page </P>
+                        <a href="<?php print url('gps-maps'); ?>" title="GPS mapping Maps">
+	                        <img src="<?php print $GLOBALS['base_url']; ?>/<?php print $directory; ?>/img/home_services_map_icon.jpg" alt="GPS mapping Maps"/>
+	                    </a>
+                        <h3><a href="<?php print url('gps-maps'); ?>"><?php echo 'Download Maps'; ?></a></h3>
+                        <p><?php print strip_tags(render($page['Download_gps_maps'])) ;?></p>
                     </div>
                     <div id="device_serv" class="col-sm-4">
-                        <a href="#" title="GPS mapping"> <img src="img/home_services_device_icon.jpg" alt="GPS mapping"/></a>
-                        <h3><a href="#">BUY A DEVICE</a></h3>
-                        <P> It is a long established fact that a reader will be distracted by the readable content of a page </P>
+                        <a href="<?php print url('devices-accessories'); ?>" title="GPS mapping Devices">
+	                        <img src="<?php print $GLOBALS['base_url']; ?>/<?php print $directory; ?>/img/home_services_device_icon.jpg" alt="GPS mapping Devices"/></a>
+                        <h3><a href="<?php print url('devices-accessories'); ?>"><?php print t('Buy a Device'); ?></a></h3>
+                         <p><?php print strip_tags(render($page['buy_a_device'])) ;?></p>
                     </div>
                     <div id="latest_update" class="col-sm-4">
-                        <h3>LATEST UPDATES</h3>
-                        <ul>
-                            <li><a href="#">Libya Map 3.4</a> </li>
-                            <li><a href="#">Tunisia Map 3.4</a> </li>
-                            <li><a href="#">Gambia Printed Map 2.0</a> </li>
-                            <li><a href="#">Libya Map 3.4</a> </li>
-                            <li><a href="#">Libya Map 3.4Libya Map 3.4</a> </li>
-                            <li><a href="#">Libya Map 3.4Libya Map 3.4</a> </li>
-                        </ul>
+                        <h3><?php print t('Latest Updates'); ?></h3>
+						<?php print render($page['home_latest_maps_updates']) ;?>
                     </div>
                 </div>
             </div>
@@ -132,11 +128,10 @@
         <div id="testimonial_wrp">
             <div class="container">
                 <div class="row col-md-12">
-                    <h3> Testimonials</h3>
+                    <h3><?php print t('Testimonials'); ?></h3>
                     <div class="testimonial_content">
                         <div class="testimonial_content_img"                               
-                             style="
-                             background: url(img/me.jpg);" >
+                             style=" background: url(img/me.jpg);" >
                         </div>
                         <div class="testimonial_content_text">
                             <p>“ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -188,7 +183,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">  
-                    <img src="img/home_partners.jpg" class="img-responsive">
+                    <img src="<?php print $GLOBALS['base_url']; ?>/<?php print $directory; ?>/img/home_partners.jpg" class="img-responsive">
                 </div>
             </div>
         </div>

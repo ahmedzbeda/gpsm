@@ -81,7 +81,7 @@
 ?>
                         <div class="container">
                             <div class="row country_price">
-                                    <h2 class="col-md-8 col-md-offset-1">
+                                    <h2 class="col-md-7 col-md-offset-1">
                                         <?php print strip_tags(render($content['field_map_name'])); ?>
                                     </h2>
                                     <div id="big_button" class="col-md-3">
@@ -90,7 +90,7 @@
 	                                       <?php print t('Buy License for $'); ?><?php $value = strip_tags(render($content['field_product_reference'])); echo $value/100; ?>
                                         </a>
                                     </div>
-                                <div class="col-md-11 col-md-offset-1">
+                                <div class="col-md-10 col-md-offset-1">
                                     <p>
 										<?php print strip_tags(render($content['field_map_description'])); ?>
                                     </p>
@@ -107,7 +107,7 @@
 				<div class="clear"></div>
             </div>
             <div class="container">
-	            <button class="citiesb btn btn-lg" data-toggle="modal" data-target="#subscriptionform"><?php print t('List of cities');?></button>
+	            <button class="citiesb btn btn-lg" data-toggle="modal" data-target="#subscriptionform"><?php print t('Divisions and districts');?></button>
             </div>
             <div class="clear"></div>
         </div>
