@@ -86,8 +86,10 @@
                             </div>
 							<?php if($is_front) { ?>
 							<div class="africa_map" >
-                            <a id='libya_map' href="#"> Libya map</a>
-                        </div>                            
+                            	<a id='libya_map' href="#">Libya map</a>
+								<a id='tunisia_map' href="#">Tunisia map</a> 
+								<a id='gambia_map' href="#">Gambia map</a> 								                           
+							</div>                            
 							<?php ;} ?>
                         </div>
                     </div>
