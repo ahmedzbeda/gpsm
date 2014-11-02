@@ -128,14 +128,39 @@ h1 {
 }
 #libya_map {
     display: block;
-    background: url(img/home_banner_libya.png)center center;
+    background: url(img/home_banner_libya.png) left top no-repeat;
     text-indent: -9999px;
     top: -24px;
     left: 284px;
     width: 547px;
     height:224px;
     position: absolute;
+    display: none;
 }
+#tunisia_map {
+    display: block;
+    background: url(img/home_banner_tunisia.png) left top no-repeat;
+    text-indent: -9999px;
+	top: -81px;
+	left: 276px;
+    width: 547px;
+    height:224px;
+    position: absolute;
+    display: none;
+}
+
+#gambia_map {
+    display: block;
+    background: url(img/home_banner_gambia.png) left top no-repeat;
+    text-indent: -9999px;
+	top: 158px;
+	left: 8px;
+    width: 547px;
+    height:224px;
+    position: absolute;
+    display: none;
+}
+
 .h_menu{
     top: 0px;
 }
