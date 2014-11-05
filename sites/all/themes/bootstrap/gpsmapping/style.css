@@ -123,7 +123,7 @@ h1 {
     width: 740px;
     height: 791px;
     float: left;
-    margin-top: 89px;
+    margin-top: 400px;
     position: relative;
 }
 #libya_map {
@@ -420,7 +420,7 @@ h1 {
     height: 13px;
     width: 12px;
     background: url(img/sprite.png) -118px 52px;
-    margin:-16px -10px; 
+    margin:-26px -10px; 
 }
 .testimonial_polygon_style {
     width: 173px;

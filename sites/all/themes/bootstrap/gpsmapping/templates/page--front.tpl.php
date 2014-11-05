@@ -86,9 +86,9 @@
                             </div>
 							<?php if($is_front) { ?>
 							<div class="africa_map" >
-                            	<a id='libya_map' href="#">Libya map</a>
-								<a id='tunisia_map' href="#">Tunisia map</a> 
-								<a id='gambia_map' href="#">Gambia map</a> 								                           
+                            	<a id='libya_map' href="<?php print url('node/5'); ?>">Libya map</a>
+								<a id='tunisia_map' href="<?php print url('node/19'); ?>">Tunisia map</a> 
+								<a id='gambia_map' href="<?php print url('node/22'); ?>">Gambia map</a> 								                           
 							</div>                            
 							<?php ;} ?>
                         </div>
@@ -132,8 +132,7 @@
                 <div class="row col-md-12">
                     <h3><?php print t('Testimonials'); ?></h3>
                     <div class="testimonial_content">
-                        <div class="testimonial_content_img"                               
-                             style=" background: url(img/me.jpg);" >
+                        <div class="testimonial_content_img" style=" background: url(<?php print $GLOBALS['base_url']; ?>/<?php print $directory; ?>/img/me.jpg);" >
                         </div>
                         <div class="testimonial_content_text">
                             <p>“ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

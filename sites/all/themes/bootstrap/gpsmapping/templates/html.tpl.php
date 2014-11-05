@@ -60,6 +60,26 @@
   <![endif]-->
   <?php print $scripts; ?>
  
+ 
+<script type="text/javascript">
+(function ($) {
+
+function scroll() {
+	$('#gambia_map').delay(9600).show('slow').delay(2000).hide('slow');
+	$('#tunisia_map').delay(5400).show('slow').delay(2000).hide('slow');	
+	$('#libya_map').delay(1200).show('slow').delay(2000).hide('slow');
+    $(".africa_map").animate({"margin-top":"89px"}, 1200).delay(3000).animate({"margin-top":"150px"}, 1200).delay(3000).animate({"margin-top":"-50px"}, 1200).delay(3400);	
+}
+
+$(document).ready(function(){ 
+scroll();
+setInterval(scroll, 13000);	
+	
+});
+
+})(jQuery);
+</script> 
+ 
   
 </head>
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
