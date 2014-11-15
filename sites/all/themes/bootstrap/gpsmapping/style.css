@@ -410,7 +410,7 @@ h1 {
 #dot_3 {
     position: absolute;
     top: 275px;
-    left: 6px
+    left: 6px;
 }
 #dot_4 {
     position: absolute;
@@ -431,24 +431,19 @@ h1 {
     font-family: pr;
     text-align: center;
     line-height: 20px;
-    position: absolute;
+    margin-left: 30px;
+    margin-top: -16px;
 }
+
 .testimonial_polygon_1 {
-    top: 137px;
-    left: 30px;
 }
 .testimonial_polygon_2 {
-    top: 249px;
-    left: 24px; 
 }
 .testimonial_polygon_3 {
-    top: 272px;
-    left: 35px; 
 }
 .testimonial_polygon_4 {
-    top: 363px;
-    left: 30px; 
 }
+
 #partners_wrap {
     width: 100%;
     background-size:  auto 100%;

@@ -1,0 +1,179 @@
+ <?php 
+/**
+* @file
+* contact functionality for a contact info
+*/
+function contact_block_block_info() {
+  $blocks = array();
+  $blocks['my_block'] = array(
+    'info' => t('Testimonials'),
+  );
+  
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_configure().
+ */
+function contact_block_block_configure($delta='') {
+  $form = array();
+  
+  switch($delta) {
+    case 'my_block' :
+    
+      $form['test1_title'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Testimonial1 title'),
+        '#default_value' => variable_get('test1_title', ''),
+      );
+      $form['test2_title'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Testimonial2 title'),
+        '#default_value' => variable_get('test2_title', ''),
+      );
+      $form['test3_title'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Testimonial3 title'),
+        '#default_value' => variable_get('test3_title', ''),
+      );
+      $form['test4_title'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Testimonial4 title'),
+        '#default_value' => variable_get('test4_title', ''),
+      );   
+      
+      
+      $form['test1_description'] = array(
+        '#type' => 'text_format',
+        '#title' => t('Testimonial1 Description'),
+        '#default_value' => variable_get('test1_description', ''),
+      );  
+       $form['test2_description'] = array(
+        '#type' => 'text_format',
+        '#title' => t('Testimonial2 Description'),
+        '#default_value' => variable_get('test2_description', ''),
+      );  
+      $form['test3_description'] = array(
+        '#type' => 'text_format',
+        '#title' => t('Testimonial3 Description'),
+        '#default_value' => variable_get('test3_description', ''),
+      );  
+      $form['test4_description'] = array(
+        '#type' => 'text_format',
+        '#title' => t('Testimonial4 Description'),
+        '#default_value' => variable_get('test4_description', ''),
+      );                  
+ 
+      
+      break;
+  }
+  return $form;
+}
+
+/**
+ * Implements hook_block_save().
+ */
+function contact_block_block_save($delta = '', $edit = array()) {
+  switch($delta) {
+    case 'my_block' :
+      // Saving the WYSIWYG text
+      
+      variable_set('test1_title', $edit['test1_title']['value']);
+      variable_set('test2_title', $edit['test2_title']['value']);
+      variable_set('test3_title', $edit['test3_title']['value']);
+      variable_set('test4_title', $edit['test4_title']['value']);
+      variable_set('test1_description', $edit['test1_description']['value']);
+      variable_set('test2_description', $edit['test2_description']['value']);
+      variable_set('test3_description', $edit['test3_description']['value']);
+      variable_set('test4_description', $edit['test4_description']['value']);
+    
+      break;
+  }
+}
+
+
+/**
+ * Implements hook_block_view().
+ */
+function contact_block_block_view($delta='') {
+  $block = array();
+  
+  switch($delta) {
+    case 'my_block' :
+      $block['content'] = my_block_view();
+      break;
+  }
+  
+  return $block;
+}
+
+/**
+ * Custom function to assemble renderable array for block content.
+ * Returns a renderable array with the block content.
+ * @return
+ *   returns a renderable array of block content.
+ */
+function my_block_view() {
+  $block = array();
+
+
+  // Capture WYSIWYG text from the variable
+  $test1_title = variable_get('test1_title', '');
+  $test2_title = variable_get('test2_title', '');
+  $test3_title = variable_get('test3_title', '');
+  $test4_title = variable_get('test4_title', '');
+  $test1_description = variable_get('test1_description', '');  
+  $test2_description = variable_get('test2_description', '');  
+  $test3_description = variable_get('test3_description', '');  
+  $test4_description = variable_get('test4_description', '');        
+  
+ 
+
+  // Block output in HTML with div wrapper
+  $block = array(
+    'test1_title' => array(
+      '#type' => 'markup',
+      '#markup' =>  $test1_title,
+      '#suffix' => '',
+    ),
+    'test2_title' => array(
+      '#type' => 'markup',
+      '#markup' =>  $test2_title,
+      '#suffix' => '',
+    ),
+    'test3_title' => array(
+      '#type' => 'markup',
+      '#markup' =>  $test3_title,
+      '#suffix' => '',
+    ),
+    'test4_title' => array(
+      '#type' => 'markup',
+      '#markup' =>  $test4_title,
+      '#suffix' => '',
+    ),   
+    'test1_description' => array(
+      '#type' => 'markup',
+      '#markup' =>  '<p>' . $test1_description . '</p>',
+      '#suffix' => '',
+    ),      
+    'test2_description' => array(
+      '#type' => 'markup',
+      '#markup' =>  '<p>' .  $test2_description . '</p>',
+      '#suffix' => '',
+    ),      
+    'test3_description' => array(
+      '#type' => 'markup',
+      '#markup' =>  '<p>' .  $test3_description . '</p>',
+      '#suffix' => '',
+    ),      
+    'test4_description' => array(
+      '#type' => 'markup',
+      '#markup' =>  '<p>' .  $test4_description . '</p>',
+      '#suffix' => '',
+    ),                    
+
+    
+  );
+
+  return $block;
+}
