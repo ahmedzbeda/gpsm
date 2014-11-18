@@ -5,7 +5,7 @@
 */
 function contact_block_block_info() {
   $blocks = array();
-  $blocks['my_block'] = array(
+  $blocks['contact_block'] = array(
     'info' => t('Testimonials'),
   );
   
@@ -19,7 +19,7 @@ function contact_block_block_configure($delta='') {
   $form = array();
   
   switch($delta) {
-    case 'my_block' :
+    case 'contact_block' :
     
       $form['test1_title'] = array(
         '#type' => 'textfield',
@@ -42,28 +42,74 @@ function contact_block_block_configure($delta='') {
         '#default_value' => variable_get('test4_title', ''),
       );   
       
-      
       $form['test1_description'] = array(
-        '#type' => 'text_format',
+        '#type' => 'textfield',
         '#title' => t('Testimonial1 Description'),
         '#default_value' => variable_get('test1_description', ''),
       );  
        $form['test2_description'] = array(
-        '#type' => 'text_format',
+        '#type' => 'textfield',
         '#title' => t('Testimonial2 Description'),
         '#default_value' => variable_get('test2_description', ''),
       );  
       $form['test3_description'] = array(
-        '#type' => 'text_format',
+        '#type' => 'textfield',
         '#title' => t('Testimonial3 Description'),
         '#default_value' => variable_get('test3_description', ''),
       );  
       $form['test4_description'] = array(
-        '#type' => 'text_format',
+        '#type' => 'textfield',
         '#title' => t('Testimonial4 Description'),
         '#default_value' => variable_get('test4_description', ''),
-      );                  
- 
+      );      
+      
+      $form['file1'] = array(
+        '#name' => 'block_image1',
+        '#type' => 'managed_file',
+        '#title' => t('Choose an Image File'),
+        '#description' => t('Select an Image for the testimonial1.  Only *.gif, *.png, *.jpg, and *.jpeg images allowed.'),
+        '#default_value' => variable_get('block_image_fid1', ''),
+        '#upload_location' => 'public://testimonials/',
+        '#upload_validators' => array(
+          'file_validate_extensions' => array('gif png jpg jpeg'),
+        ),
+      );
+
+      $form['file2'] = array(
+        '#name' => 'block_image2',
+        '#type' => 'managed_file',
+        '#title' => t('Choose an Image File'),
+        '#description' => t('Select an Image for the testimonial2.  Only *.gif, *.png, *.jpg, and *.jpeg images allowed.'),
+        '#default_value' => variable_get('block_image_fid2', ''),
+        '#upload_location' => 'public://testimonials/',
+        '#upload_validators' => array(
+          'file_validate_extensions' => array('gif png jpg jpeg'),
+        ),
+      );            
+                        
+      $form['file3'] = array(
+        '#name' => 'block_image3',
+        '#type' => 'managed_file',
+        '#title' => t('Choose an Image File'),
+        '#description' => t('Select an Image for the testimonial3.  Only *.gif, *.png, *.jpg, and *.jpeg images allowed.'),
+        '#default_value' => variable_get('block_image_fid3', ''),
+        '#upload_location' => 'public://testimonials/',
+        '#upload_validators' => array(
+          'file_validate_extensions' => array('gif png jpg jpeg'),
+        ),
+      );
+      
+      $form['file4'] = array(
+        '#name' => 'block_image4',
+        '#type' => 'managed_file',
+        '#title' => t('Choose an Image File'),
+        '#description' => t('Select an Image for the testimonial4.  Only *.gif, *.png, *.jpg, and *.jpeg images allowed.'),
+        '#default_value' => variable_get('block_image_fid4', ''),
+        '#upload_location' => 'public://testimonials/',
+        '#upload_validators' => array(
+          'file_validate_extensions' => array('gif png jpg jpeg'),
+        ),
+      );       
       
       break;
   }
@@ -75,7 +121,7 @@ function contact_block_block_configure($delta='') {
  */
 function contact_block_block_save($delta = '', $edit = array()) {
   switch($delta) {
-    case 'my_block' :
+    case 'contact_block' :
       // Saving the WYSIWYG text
       
       variable_set('test1_title', $edit['test1_title']['value']);
@@ -86,6 +132,34 @@ function contact_block_block_save($delta = '', $edit = array()) {
       variable_set('test2_description', $edit['test2_description']['value']);
       variable_set('test3_description', $edit['test3_description']['value']);
       variable_set('test4_description', $edit['test4_description']['value']);
+      
+      $file1 = file_load($edit['file1']);
+      $file1->status = FILE_STATUS_PERMANENT;
+      file_save($file1);
+      $block1 = block_load('contact_block', $delta);
+      file_usage_add($file1, 'contact_block', 'block', $block1->bid);
+      variable_set('block_image_fid1', $file1->fid);
+      
+      $file2 = file_load($edit['file2']);
+      $file2->status = FILE_STATUS_PERMANENT;
+      file_save($file2);
+      $block2 = block_load('contact_block', $delta);
+      file_usage_add($file2, 'contact_block', 'block', $block2->bid);
+      variable_set('block_image_fid2', $file2->fid); 
+      
+      $file3 = file_load($edit['file3']);
+      $file3->status = FILE_STATUS_PERMANENT;
+      file_save($file3);
+      $block3 = block_load('contact_block', $delta);
+      file_usage_add($file3, 'contact_block', 'block', $block3->bid);
+      variable_set('block_image_fid3', $file3->fid); 
+      
+      $file4 = file_load($edit['file4']);
+      $file4->status = FILE_STATUS_PERMANENT;
+      file_save($file4);
+      $block4 = block_load('contact_block', $delta);
+      file_usage_add($file4, 'contact_block', 'block', $block4->bid);
+      variable_set('block_image_fid4', $file4->fid);                                      
     
       break;
   }
@@ -115,6 +189,73 @@ function contact_block_block_view($delta='') {
  */
 function my_block_view() {
   $block = array();
+  
+  
+  
+$image_file1 = file_load(variable_get('block_image_fid1', ''));
+  $image_path1 = '';
+
+  if (isset($image_file1->uri)) {
+    $image_path1 = $image_file1->uri;
+  }
+
+  $image1 = theme_image(array(
+    'path' => ($image_path1),
+    'alt' => t('Image description here.'),
+    'title' => t('This is our block image.'),
+    'attributes' => array('class' => 'class_name'),
+  ));
+  
+  
+  
+  
+$image_file2 = file_load(variable_get('block_image_fid2', ''));
+  $image_path2 = '';
+
+  if (isset($image_file2->uri)) {
+    $image_path2 = $image_file2->uri;
+  }
+
+  $image2 = theme_image(array(
+    'path' => ($image_path2),
+    'alt' => t('Image description here.'),
+    'title' => t('This is our block image.'),
+    'attributes' => array('class' => 'class_name'),
+  ));    
+  
+  
+  
+  
+ $image_file3 = file_load(variable_get('block_image_fid3', ''));
+  $image_path3 = '';
+
+  if (isset($image_file3->uri)) {
+    $image_path3 = $image_file3->uri;
+  }
+
+  $image3 = theme_image(array(
+    'path' => ($image_path3),
+    'alt' => t('Image description here.'),
+    'title' => t('This is our block image.'),
+    'attributes' => array('class' => 'class_name'),
+  ));
+  
+  
+  
+  
+$image_file4 = file_load(variable_get('block_image_fid4', ''));
+  $image_path4 = '';
+
+  if (isset($image_file4->uri)) {
+    $image_path4 = $image_file4->uri;
+  }
+
+  $image4 = theme_image(array(
+    'path' => ($image_path4),
+    'alt' => t('Image description here.'),
+    'title' => t('This is our block image.'),
+    'attributes' => array('class' => 'class_name'),
+  ));
 
 
   // Capture WYSIWYG text from the variable
@@ -125,8 +266,7 @@ function my_block_view() {
   $test1_description = variable_get('test1_description', '');  
   $test2_description = variable_get('test2_description', '');  
   $test3_description = variable_get('test3_description', '');  
-  $test4_description = variable_get('test4_description', '');        
-  
+  $test4_description = variable_get('test4_description', '');          
  
 
   // Block output in HTML with div wrapper
@@ -170,7 +310,27 @@ function my_block_view() {
       '#type' => 'markup',
       '#markup' =>  '<p>' .  $test4_description . '</p>',
       '#suffix' => '',
-    ),                    
+    ),
+    'image1' => array(
+      '#prefix' => '',
+      '#type' => 'markup',
+      '#markup' => $image1,
+    ), 
+    'image2' => array(
+      '#prefix' => '',
+      '#type' => 'markup',
+      '#markup' => $image2,
+    ),                            
+    'image3' => array(
+      '#prefix' => '',
+      '#type' => 'markup',
+      '#markup' => $image3,
+    ), 
+    'image4' => array(
+      '#prefix' => '',
+      '#type' => 'markup',
+      '#markup' => $image3=4,
+    ),     
 
     
   );

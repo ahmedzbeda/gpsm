@@ -78,7 +78,24 @@ setInterval(scroll, 13000);
 });
 
 })(jQuery);
-</script> 
+</script>
+
+
+
+<script>
+  $ = jQuery;
+  function showonlyone(thechosenone) {
+     $('div[name|="newboxes"]').each(function(index) {
+          if ($(this).attr("id") == thechosenone) {
+               $(this).show(300);
+          }
+          else {
+               $(this).hide(0);
+          }
+     });
+  }
+</script>
+
  
   
 </head>
