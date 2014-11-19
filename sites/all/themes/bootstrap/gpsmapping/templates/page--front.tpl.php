@@ -132,87 +132,8 @@
                 <div class="row col-md-12">
                     <h3><?php print t('Testimonials'); ?></h3>
                     
-                    <div class="testimonial_content" name="newboxes" id="newboxes1">
-                        <div class="testimonial_content_img" style=" background: url(<?php print $GLOBALS['base_url']; ?>/<?php print $directory; ?>/img/me.jpg);" ></div>
-                        <div class="testimonial_content_text">
-                            <p>“ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  ”</p>
-                            <p class="testimonial_name">- Mohammad AboGhrara</p>
-                        </div>
-                    </div>
-                    
-                    <div class="testimonial_content" name="newboxes" id="newboxes2">
-                        <div class="testimonial_content_img" style=" background: url(<?php print $GLOBALS['base_url']; ?>/<?php print $directory; ?>/img/me.jpg);" ></div>
-                        <div class="testimonial_content_text">
-                            <p>“ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  ”</p>
-                            <p class="testimonial_name">- Mohammad AboGhrara</p>
-                        </div>
-                    </div>
-                    
-                    <div class="testimonial_content" name="newboxes" id="newboxes3">
-                        <div class="testimonial_content_img" style=" background: url(<?php print $GLOBALS['base_url']; ?>/<?php print $directory; ?>/img/me.jpg);" ></div>
-                        <div class="testimonial_content_text">
-                            <p>“ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  ”</p>
-                            <p class="testimonial_name">- Mohammad AboGhrara</p>
-                        </div>
-                    </div>
-                    
-                    <div class="testimonial_content" name="newboxes" id="newboxes4">
-                        <div class="testimonial_content_img" style=" background: url(<?php print $GLOBALS['base_url']; ?>/<?php print $directory; ?>/img/me.jpg);" ></div>
-                        <div class="testimonial_content_text">
-                            <p>“ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  ”</p>
-                            <p class="testimonial_name">- Mohammad AboGhrara</p>
-                        </div>
-                    </div>                                                            
-                    
-                    <div class="testimonial_track hidden-sm hidden-xs">
-	                    
-                        <div class="dot">
-                            <div id="dot_1">
-                                <a class="active_dot" href="javascript:showonlyone('newboxes1');"></a>
-                            <div class="testimonial_polygon_1 testimonial_polygon_style">
-                                <p> He used the map in Libya</p>
-                                <div class="polygon_triangle">
-                                </div>
-                            </div>                                                                
-                            </div>
-                            
-                            
-                            <div id="dot_2">
-                                <a class="active_dot" href="javascript:showonlyone('newboxes2');"></a> 
-                            <div class="testimonial_polygon_2 testimonial_polygon_style">
-                                <p> He used the map in Libya</p>
-                                <div class="polygon_triangle">
-                                </div>
-                            </div>                                                              
-                            </div>
-                            
-                            
-                            <div id="dot_3">
-                                <a class="active_dot" href="javascript:showonlyone('newboxes3');"></a>
-                            <div class="testimonial_polygon_3 testimonial_polygon_style">
-                                <p> He used the map in Libya</p>
-                                <div class="polygon_triangle">
-                                </div>
-                            </div>                                
-                            </div>
-                            
-                            
-                            <div id="dot_4">
-                                <a class="active_dot" href="javascript:showonlyone('newboxes4');"></a>                                
-                            <div class="testimonial_polygon_4 testimonial_polygon_style">
-                                <p> He used the map in Libya</p>
-                                <div class="polygon_triangle">
-                                </div>
-                            </div>
-                            </div>                          
-                            
-                         </div> 
-     
-                    </div>
+						<?php print render($page['testimonials']) ;?>
+
                 </div>
             </div>
         </div> 

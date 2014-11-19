@@ -23,6 +23,7 @@ regions[bottom_header]         = 'Home: Bottom Header'
 regions[Download_gps_maps]         = 'Home: Download GPS Map'
 regions[buy_a_device]         = 'Home: Buy a device'
 regions[home_latest_maps_updates]         = 'Home: Latest Updates'
+regions[testimonials]         = 'testimonials'
 
 
 regions[help]           = 'Help'

@@ -124,14 +124,14 @@ function contact_block_block_save($delta = '', $edit = array()) {
     case 'contact_block' :
       // Saving the WYSIWYG text
       
-      variable_set('test1_title', $edit['test1_title']['value']);
-      variable_set('test2_title', $edit['test2_title']['value']);
-      variable_set('test3_title', $edit['test3_title']['value']);
-      variable_set('test4_title', $edit['test4_title']['value']);
-      variable_set('test1_description', $edit['test1_description']['value']);
-      variable_set('test2_description', $edit['test2_description']['value']);
-      variable_set('test3_description', $edit['test3_description']['value']);
-      variable_set('test4_description', $edit['test4_description']['value']);
+      variable_set('test1_title', $edit['test1_title']);
+      variable_set('test2_title', $edit['test2_title']);
+      variable_set('test3_title', $edit['test3_title']);
+      variable_set('test4_title', $edit['test4_title']);
+      variable_set('test1_description', $edit['test1_description']);
+      variable_set('test2_description', $edit['test2_description']);
+      variable_set('test3_description', $edit['test3_description']);
+      variable_set('test4_description', $edit['test4_description']);
       
       $file1 = file_load($edit['file1']);
       $file1->status = FILE_STATUS_PERMANENT;
@@ -173,8 +173,8 @@ function contact_block_block_view($delta='') {
   $block = array();
   
   switch($delta) {
-    case 'my_block' :
-      $block['content'] = my_block_view();
+    case 'contact_block' :
+      $block['content'] = contact_block_view();
       break;
   }
   
@@ -187,7 +187,7 @@ function contact_block_block_view($delta='') {
  * @return
  *   returns a renderable array of block content.
  */
-function my_block_view() {
+function contact_block_view() {
   $block = array();
   
   
@@ -329,7 +329,7 @@ $image_file4 = file_load(variable_get('block_image_fid4', ''));
     'image4' => array(
       '#prefix' => '',
       '#type' => 'markup',
-      '#markup' => $image3=4,
+      '#markup' => $image4,
     ),     
 
     
