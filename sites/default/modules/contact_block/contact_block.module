@@ -203,6 +203,8 @@ $image_file1 = file_load(variable_get('block_image_fid1', ''));
     'path' => ($image_path1),
     'alt' => t('Image description here.'),
     'title' => t('This is our block image.'),
+    'width' => '100px',
+    'height' => '100px',    
     'attributes' => array('class' => 'class_name'),
   ));
   
@@ -220,6 +222,8 @@ $image_file2 = file_load(variable_get('block_image_fid2', ''));
     'path' => ($image_path2),
     'alt' => t('Image description here.'),
     'title' => t('This is our block image.'),
+    'width' => '100px',
+    'height' => '100px',      
     'attributes' => array('class' => 'class_name'),
   ));    
   
@@ -237,6 +241,8 @@ $image_file2 = file_load(variable_get('block_image_fid2', ''));
     'path' => ($image_path3),
     'alt' => t('Image description here.'),
     'title' => t('This is our block image.'),
+    'width' => '100px',
+    'height' => '100px',      
     'attributes' => array('class' => 'class_name'),
   ));
   
@@ -253,7 +259,7 @@ $image_file4 = file_load(variable_get('block_image_fid4', ''));
   $image4 = theme_image(array(
     'path' => ($image_path4),
     'alt' => t('Image description here.'),
-    'title' => t('This is our block image.'),
+    'title' => t('This is our block image.'),    
     'attributes' => array('class' => 'class_name'),
   ));
 
