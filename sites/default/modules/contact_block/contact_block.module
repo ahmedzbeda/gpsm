@@ -26,42 +26,19 @@ function contact_block_block_configure($delta='') {
         '#title' => t('Testimonial1 title'),
         '#default_value' => variable_get('test1_title', ''),
       );
-      $form['test2_title'] = array(
+      
+      $form['name1'] = array(
         '#type' => 'textfield',
-        '#title' => t('Testimonial2 title'),
-        '#default_value' => variable_get('test2_title', ''),
-      );
-      $form['test3_title'] = array(
-        '#type' => 'textfield',
-        '#title' => t('Testimonial3 title'),
-        '#default_value' => variable_get('test3_title', ''),
-      );
-      $form['test4_title'] = array(
-        '#type' => 'textfield',
-        '#title' => t('Testimonial4 title'),
-        '#default_value' => variable_get('test4_title', ''),
-      );   
+        '#title' => t('testifier name'),
+        '#default_value' => variable_get('name1', ''),
+      );      
       
       $form['test1_description'] = array(
-        '#type' => 'textfield',
+        '#type' => 'textarea',
         '#title' => t('Testimonial1 Description'),
         '#default_value' => variable_get('test1_description', ''),
-      );  
-       $form['test2_description'] = array(
-        '#type' => 'textfield',
-        '#title' => t('Testimonial2 Description'),
-        '#default_value' => variable_get('test2_description', ''),
-      );  
-      $form['test3_description'] = array(
-        '#type' => 'textfield',
-        '#title' => t('Testimonial3 Description'),
-        '#default_value' => variable_get('test3_description', ''),
-      );  
-      $form['test4_description'] = array(
-        '#type' => 'textfield',
-        '#title' => t('Testimonial4 Description'),
-        '#default_value' => variable_get('test4_description', ''),
-      );      
+      );
+              
       
       $form['file1'] = array(
         '#name' => 'block_image1',
@@ -74,7 +51,25 @@ function contact_block_block_configure($delta='') {
           'file_validate_extensions' => array('gif png jpg jpeg'),
         ),
       );
-
+      
+      $form['test2_title'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Testimonial2 title'),
+        '#default_value' => variable_get('test2_title', ''),
+      );
+      
+      $form['name2'] = array(
+        '#type' => 'textfield',
+        '#title' => t('testifier name2'),
+        '#default_value' => variable_get('name2', ''),
+      );      
+      
+       $form['test2_description'] = array(
+        '#type' => 'textarea',
+        '#title' => t('Testimonial2 Description'),
+        '#default_value' => variable_get('test2_description', ''),
+      );           
+      
       $form['file2'] = array(
         '#name' => 'block_image2',
         '#type' => 'managed_file',
@@ -85,8 +80,26 @@ function contact_block_block_configure($delta='') {
         '#upload_validators' => array(
           'file_validate_extensions' => array('gif png jpg jpeg'),
         ),
-      );            
-                        
+      );        
+      
+      $form['test3_title'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Testimonial3 title'),
+        '#default_value' => variable_get('test3_title', ''),
+      );
+      
+      $form['name3'] = array(
+        '#type' => 'textfield',
+        '#title' => t('testifier name3'),
+        '#default_value' => variable_get('name3', ''),
+      );      
+      
+      $form['test3_description'] = array(
+        '#type' => 'textarea',
+        '#title' => t('Testimonial3 Description'),
+        '#default_value' => variable_get('test3_description', ''),
+      );  
+      
       $form['file3'] = array(
         '#name' => 'block_image3',
         '#type' => 'managed_file',
@@ -97,7 +110,25 @@ function contact_block_block_configure($delta='') {
         '#upload_validators' => array(
           'file_validate_extensions' => array('gif png jpg jpeg'),
         ),
+      );      
+      
+      $form['test4_title'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Testimonial4 title'),
+        '#default_value' => variable_get('test4_title', ''),
       );
+      
+      $form['name4'] = array(
+        '#type' => 'textfield',
+        '#title' => t('testifier name4'),
+        '#default_value' => variable_get('name4', ''),
+      );       
+      
+      $form['test4_description'] = array(
+        '#type' => 'textarea',
+        '#title' => t('Testimonial4 Description'),
+        '#default_value' => variable_get('test4_description', ''),
+      );             
       
       $form['file4'] = array(
         '#name' => 'block_image4',
@@ -110,6 +141,8 @@ function contact_block_block_configure($delta='') {
           'file_validate_extensions' => array('gif png jpg jpeg'),
         ),
       );       
+     
+      
       
       break;
   }
@@ -132,6 +165,11 @@ function contact_block_block_save($delta = '', $edit = array()) {
       variable_set('test2_description', $edit['test2_description']);
       variable_set('test3_description', $edit['test3_description']);
       variable_set('test4_description', $edit['test4_description']);
+      variable_set('name1', $edit['name1']);
+      variable_set('name2', $edit['name2']);
+      variable_set('name3', $edit['name3']);
+      variable_set('name4', $edit['name4']);     
+     
       
       $file1 = file_load($edit['file1']);
       $file1->status = FILE_STATUS_PERMANENT;
@@ -202,9 +240,7 @@ $image_file1 = file_load(variable_get('block_image_fid1', ''));
   $image1 = theme_image(array(
     'path' => ($image_path1),
     'alt' => t('Image description here.'),
-    'title' => t('This is our block image.'),
-    'width' => '100px',
-    'height' => '100px',    
+    'title' => t('This is our block image.'),  
     'attributes' => array('class' => 'class_name'),
   ));
   
@@ -221,9 +257,7 @@ $image_file2 = file_load(variable_get('block_image_fid2', ''));
   $image2 = theme_image(array(
     'path' => ($image_path2),
     'alt' => t('Image description here.'),
-    'title' => t('This is our block image.'),
-    'width' => '100px',
-    'height' => '100px',      
+    'title' => t('This is our block image.'),    
     'attributes' => array('class' => 'class_name'),
   ));    
   
@@ -241,8 +275,6 @@ $image_file2 = file_load(variable_get('block_image_fid2', ''));
     'path' => ($image_path3),
     'alt' => t('Image description here.'),
     'title' => t('This is our block image.'),
-    'width' => '100px',
-    'height' => '100px',      
     'attributes' => array('class' => 'class_name'),
   ));
   
@@ -272,74 +304,101 @@ $image_file4 = file_load(variable_get('block_image_fid4', ''));
   $test1_description = variable_get('test1_description', '');  
   $test2_description = variable_get('test2_description', '');  
   $test3_description = variable_get('test3_description', '');  
-  $test4_description = variable_get('test4_description', '');          
+  $test4_description = variable_get('test4_description', '');
+  $name1 = variable_get('name1', '');
+  $name2 = variable_get('name2', '');
+  $name3 = variable_get('name3', '');
+  $name4 = variable_get('name4', '');           
  
 
   // Block output in HTML with div wrapper
-  $block = array(
-    'test1_title' => array(
-      '#type' => 'markup',
-      '#markup' =>  $test1_title,
-      '#suffix' => '',
-    ),
-    'test2_title' => array(
-      '#type' => 'markup',
-      '#markup' =>  $test2_title,
-      '#suffix' => '',
-    ),
-    'test3_title' => array(
-      '#type' => 'markup',
-      '#markup' =>  $test3_title,
-      '#suffix' => '',
-    ),
-    'test4_title' => array(
-      '#type' => 'markup',
-      '#markup' =>  $test4_title,
-      '#suffix' => '',
-    ),   
-    'test1_description' => array(
-      '#type' => 'markup',
-      '#markup' =>  '<p>' . $test1_description . '</p>',
-      '#suffix' => '',
-    ),      
-    'test2_description' => array(
-      '#type' => 'markup',
-      '#markup' =>  '<p>' .  $test2_description . '</p>',
-      '#suffix' => '',
-    ),      
-    'test3_description' => array(
-      '#type' => 'markup',
-      '#markup' =>  '<p>' .  $test3_description . '</p>',
-      '#suffix' => '',
-    ),      
-    'test4_description' => array(
-      '#type' => 'markup',
-      '#markup' =>  '<p>' .  $test4_description . '</p>',
-      '#suffix' => '',
-    ),
-    'image1' => array(
-      '#prefix' => '',
-      '#type' => 'markup',
-      '#markup' => $image1,
-    ), 
-    'image2' => array(
-      '#prefix' => '',
-      '#type' => 'markup',
-      '#markup' => $image2,
-    ),                            
-    'image3' => array(
-      '#prefix' => '',
-      '#type' => 'markup',
-      '#markup' => $image3,
-    ), 
-    'image4' => array(
-      '#prefix' => '',
-      '#type' => 'markup',
-      '#markup' => $image4,
-    ),     
+  $block = '
+
+
+
+    <div class="testimonial_content" name="newboxes" id="newboxes1">
+        <div class="testimonial_content_img" style=" background: url('. image_style_url('thumbnail', $image_path1) .');" ></div>
+        <div class="testimonial_content_text">
+            <p>' . $test1_description . '</p>
+            <p class="testimonial_name">- ' . $name1 . '</p>
+        </div>
+    </div>
+    
+    <div class="testimonial_content" name="newboxes" id="newboxes2">
+        <div class="testimonial_content_img" style=" background: url('. image_style_url('thumbnail', $image_path2) .');" ></div>
+        <div class="testimonial_content_text">
+            <p>' . $test2_description . '</p>
+            <p class="testimonial_name">- ' . $name2 . '</p>
+        </div>
+    </div>
+    
+    <div class="testimonial_content" name="newboxes" id="newboxes3">
+        <div class="testimonial_content_img" style=" background: url('. image_style_url('thumbnail', $image_path3) .');" ></div>
+        <div class="testimonial_content_text">
+            <p>' . $test3_description . '</p>
+            <p class="testimonial_name">- ' . $name3 . '</p>
+        </div>
+    </div>
+    
+    <div class="testimonial_content" name="newboxes" id="newboxes4">
+        <div class="testimonial_content_img" style=" background: url('. image_style_url('thumbnail', $image_path4) .');" ></div>
+        <div class="testimonial_content_text">
+            <p>' . $test4_description . '</p>
+            <p class="testimonial_name">- ' . $name4 . '</p>
+        </div>
+    </div>                                                            
+    
+    <div class="testimonial_track hidden-sm hidden-xs">
+        
+        <div class="dot">
+            <div id="dot_1">
+                <a class="active_dot" href="javascript:showonlyone(\'newboxes1\');"></a>
+            <div class="testimonial_polygon_1 testimonial_polygon_style">
+                <p><a href="javascript:showonlyone(\'newboxes1\');">' . $test1_title . '</a></p>
+                <div class="polygon_triangle">
+                </div>
+            </div>                                                                
+            </div>
+            
+            
+            <div id="dot_2">
+                <a class="active_dot" href="javascript:showonlyone(\'newboxes2\');"></a> 
+            <div class="testimonial_polygon_2 testimonial_polygon_style">
+                <p><a href="javascript:showonlyone(\'newboxes2\');">' . $test2_title . '</a></p>
+                <div class="polygon_triangle">
+                </div>
+            </div>                                                              
+            </div>
+            
+            
+            <div id="dot_3">
+                <a class="active_dot" href="javascript:showonlyone(\'newboxes3\');"></a>
+            <div class="testimonial_polygon_3 testimonial_polygon_style">
+                <p><a href="javascript:showonlyone(\'newboxes3\');">' . $test3_title . '</a></p>
+                <div class="polygon_triangle">
+                </div>
+            </div>                                
+            </div>
+            
+            
+            <div id="dot_4">
+                <a class="active_dot" href="javascript:showonlyone(\'newboxes4\');"></a>                                
+            <div class="testimonial_polygon_4 testimonial_polygon_style">
+                <p><a href="javascript:showonlyone(\'newboxes4\');">' . $test4_title . '</a></p>
+                <div class="polygon_triangle">
+                </div>
+            </div>
+            </div>                          
+            
+         </div> 
+
+    </div>
+
 
     
-  );
+
+    
+';
 
   return $block;
 }

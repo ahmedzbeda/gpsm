@@ -342,7 +342,7 @@ h1 {
 #testimonial_wrp h3{
     display: block;
     text-align: center;
-    padding-top: 50px;
+    padding-top: 20px;
     color: #ffffff;
     font-size: 30px;
     font-family: ps;
@@ -360,9 +360,12 @@ h1 {
 
 .testimonial_content_text {
     display: block; 
-    margin-left: 10px; 
-    float: left;
-    width: 95%;}
+    margin-left: 65px; 
+    width: 80%;
+    text-align: justify;
+	
+ }
+ 
 .testimonial_content_text p {
     color: #ffffff;
     font-family: pr;
@@ -380,7 +383,6 @@ h1 {
     height: 45px;      
     background-size: 100% !important;    
     border-radius: 30px;     
-    margin-left: -37px;
 }
 .testimonial_track {
     background: url(img/home_testimonial_track.png) no-repeat center center;
@@ -448,6 +450,10 @@ h1 {
 .testimonial_polygon_3 {
 }
 .testimonial_polygon_4 {
+}
+
+.testimonial_polygon_style a {
+	color: #FFF !important;
 }
 
 #partners_wrap {
@@ -1218,6 +1224,10 @@ color: #777;
 .region-content .views-field-field-field-country-map .field-content a {
 	display: table-cell;
 	vertical-align: middle;
+}
+
+#block-user-login .form-control {
+    width: 70%;
 }
 
 

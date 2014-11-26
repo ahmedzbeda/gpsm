@@ -67,19 +67,25 @@ function gpsmapping_menu_tree(&$variables) {
 }
 
 
-
-function gpsmapping_theme(&$existing, $type, $theme, $path) {
-   $hooks['user_login_block'] = array(
-     'template' => 'templates/user-login-block',
-     'render element' => 'form',
-   );
-   return $hooks;
- }
- 
-function gpsmapping_preprocess_user_login_block(&$vars) {
-  $vars['name'] = render($vars['form']['name']);
-  $vars['pass'] = render($vars['form']['pass']);
-  unset($vars['form']['links']);  
-  $vars['submit'] = render($vars['form']['actions']['submit']);
-  $vars['rendered'] = drupal_render_children($vars['form']);
+function gpsmapping_theme() {
+  $items = array();
+  // create custom user-login.tpl.php
+  $items['user_login'] = array(
+  'render element' => 'form',
+  'path' => drupal_get_path('theme', 'gpsmapping') . '/templates',
+  'template' => 'user-login',
+  'preprocess functions' => array(
+  'gpsmapping_preprocess_user_login'
+  ),
+ );
+return $items;
 }
+
+
+
+
+
+
+
+
+

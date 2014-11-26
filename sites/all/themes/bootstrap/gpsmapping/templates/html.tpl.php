@@ -65,15 +65,20 @@
 (function ($) {
 
 function scroll() {
-	$('#gambia_map').delay(9600).show('slow').delay(2000).hide('slow');
-	$('#tunisia_map').delay(5400).show('slow').delay(2000).hide('slow');	
-	$('#libya_map').delay(1200).show('slow').delay(2000).hide('slow');
-    $(".africa_map").animate({"margin-top":"89px"}, 1200).delay(3000).animate({"margin-top":"150px"}, 1200).delay(3000).animate({"margin-top":"-50px"}, 1200).delay(3400);	
+	$(".africa_map").animate({"margin-top":"89px"}, 1000).delay(2000);
+	$('#libya_map').delay(1000).show(500).delay(1000).hide(500).delay(6000);
+	
+	$(".africa_map").animate({"margin-top":"150px"}, 1000).delay(2000);
+	$('#tunisia_map').delay(4000).show(500).delay(1000).hide(500).delay(3000);	
+	
+	$(".africa_map").animate({"margin-top":"-50px"}, 1000).delay(2000);	
+	$('#gambia_map').delay(7000).show(500).delay(1000).hide(500);
+    
 }
 
 $(document).ready(function(){ 
 scroll();
-setInterval(scroll, 13000);	
+setInterval(scroll, 9000);
 	
 });
 
@@ -87,10 +92,10 @@ setInterval(scroll, 13000);
   function showonlyone(thechosenone) {
      $('div[name|="newboxes"]').each(function(index) {
           if ($(this).attr("id") == thechosenone) {
-               $(this).show(300);
+               $(this).show(600);
           }
           else {
-               $(this).hide(0);
+               $(this).hide(600);
           }
      });
   }
