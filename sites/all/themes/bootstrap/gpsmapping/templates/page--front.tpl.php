@@ -114,9 +114,9 @@
                         <p><?php print strip_tags(render($page['Download_gps_maps'])) ;?></p>
                     </div>
                     <div id="device_serv" class="col-sm-4">
-                        <a href="<?php print url('devices-accessories'); ?>" title="GPS mapping Devices">
+                        <a href="<?php print url('products'); ?>" title="GPS mapping Devices">
 	                        <img src="<?php print $GLOBALS['base_url']; ?>/<?php print $directory; ?>/img/home_services_device_icon.jpg" alt="GPS mapping Devices"/></a>
-                        <h3><a href="<?php print url('devices-accessories'); ?>"><?php print t('Buy a Device'); ?></a></h3>
+                        <h3><a href="<?php print url('products'); ?>"><?php print t('Buy a Device'); ?></a></h3>
                          <p><?php print strip_tags(render($page['buy_a_device'])) ;?></p>
                     </div>
                     <div id="latest_update" class="col-sm-4">

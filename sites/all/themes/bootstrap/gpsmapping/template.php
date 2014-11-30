@@ -35,6 +35,10 @@ function gpsmapping_preprocess_page(&$variables, $hook) {
     'group' => JS_THEME,
   );
   drupal_add_js(drupal_get_path('theme', 'gpsmapping'). '/js/bootstrap.min.js', $options);
+  drupal_add_js(drupal_get_path('theme', 'gpsmapping'). '/fancy/jquery.fancybox.js', $options);
+  drupal_add_js(drupal_get_path('theme', 'gpsmapping'). '/fancy/helpers/jquery.fancybox-media.js', $options);    
+  
+  
 }
 function gpsmapping_menu_tree__main_menu($variables) {
   return '<ul id="header_menu">' . $variables['tree'] . '</ul>';

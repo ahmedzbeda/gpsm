@@ -37,7 +37,8 @@ regions[page_bottom]    = 'Page bottom'
 ;; Stylesheets
 ;;;;;;;;;;;;;;;;;;;;;
 
-
+stylesheets[all][] = fancy/jquery.fancybox.css
+stylesheets[all][] = fancy/jquery.fancybox.css
 stylesheets[all][] = css/bootstrap.min.css
 stylesheets[all][] = style.css
 

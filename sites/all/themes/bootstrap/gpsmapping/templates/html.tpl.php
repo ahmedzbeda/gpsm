@@ -77,9 +77,8 @@ function scroll() {
 }
 
 $(document).ready(function(){ 
-scroll();
-setInterval(scroll, 9000);
-	
+	scroll();
+	setInterval(scroll, 9000);	
 });
 
 })(jQuery);
@@ -99,6 +98,26 @@ setInterval(scroll, 9000);
           }
      });
   }
+</script>
+
+
+
+<script>
+$(document).ready(function(){ 
+	$('.additi_pr').click(function() {
+		$('.product_additional').toggle("normal");
+	});
+	
+	jQuery(".galleryimage").fancybox({
+		fitToView	: true,
+		autoSize	: true,
+		closeClick	: true,
+		padding: 0,
+		helpers: { overlay: { locked: false } },
+	});	
+	
+	
+});
 </script>
 
  

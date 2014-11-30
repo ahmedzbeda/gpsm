@@ -97,16 +97,46 @@
   <?php endif; ?>
 
   <div class="content"<?php print $content_attributes; ?>>
-    <?php
-      // We hide the comments and links now so that we can render them later.
-      hide($content['comments']);
-      hide($content['links']);
-      print render($content);
-    ?>
+
+<div class="row">	  
+	<div class="col-sm-5">
+	  <div class="pr_main_img">	
+	  	<?php print render($content['product:field_main_image']); ?> 
+	  	<a class="additi_pr"><?php print t('Additional Images'); ?></a>	  	
+	  </div>
+	</div>
+	<div class="col-sm-7">
+	  	<div class="side_title"><?php print strip_tags(render($content['product:title_field'])); ?></div>
+	  	<p class="product_description"><?php print strip_tags(render($content['product:field_short_description'])); ?></p>
+	  	<div class="product_price_cart_holder">
+		  	<div class="product_price"><?php print strip_tags(render($content['product:commerce_price'])); ?></div>
+		  	<div class="product_cart"><?php print render($content['field_product']); ?></div>
+		  	<div class="clear"></div>
+	  	</div>
+		<div class="product_overview">
+			<p><?php print t('Overview'); ?></p>  	
+		  	<?php print render($content['product:field_overview']); ?>  	
+		</div>
+	</div>
+</div> 
+
+
+<div class="row"><div class="col-sm-12"><div class="product_additional">
+	<?php print render($content['product:field_additional_images']); ?>
+	<div class="clear"></div>
+</div></div></div>
+
+<div class="row"><div class="col-sm-12"><div class="">
+	<?php print render($content['product:field_long_description']); ?>
+	<div class="clear"></div>
+</div></div></div>
+  	  	  	  	  	 	  	  	  	  	  	  	  	  	  	
+  	
+  	
+
   </div>
 
-  <?php print render($content['links']); ?>
-
-  <?php print render($content['comments']); ?>
-
 </div>
+
+
+
