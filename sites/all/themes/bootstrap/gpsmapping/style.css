@@ -1310,6 +1310,14 @@ block-views-related-accessories-block #views-bootstrap-grid-1 .col {
 	color: #59b671;	
 }
 
+
+.product_overview_acc .field-label {
+	font-family: pr;
+	color: #59b671;
+	margin-bottom: 5px;	
+	margin-top: 5px;
+}
+
 .field-name-field-long-description .field-label {
 	font-family: pr;
 	color: #59b671;	
@@ -1397,6 +1405,35 @@ block-views-related-accessories-block #views-bootstrap-grid-1 .col {
 	margin-top: 10px;
 	display: block;
 	
+}
+
+.node-accessories .form-item-quantity label {
+	float: left;
+	margin-right: 15px;
+	font-size: 12px;
+}
+
+.node-accessories .form-control {
+	height: 25px;
+	border-radius: 
+}
+
+.node-accessories .field-name-field-acc-overview {
+	margin-bottom: 15px;
+	color: #777;
+}
+
+.product_cart_acc .form-type-textfield {
+	line-height: 25px;
+	color: #999;
+}
+
+.node-accessories .product_price {
+	line-height: 25px;
+}
+
+.node-accessories .side_title {
+	margin-bottom: 5px;
 }
 
 @media (min-width: 1200px) {
