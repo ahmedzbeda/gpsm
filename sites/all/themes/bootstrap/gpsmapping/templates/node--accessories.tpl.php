@@ -107,7 +107,7 @@
 	<div class="col-sm-7">
 	  	<div class="side_title"><?php print strip_tags(render($content['product:title_field'])); ?></div>
 
-		<div class="product_overview_acc">	
+		<div class="product_overview_acc">
 		  	<?php print render($content['product:field_acc_overview']); ?>  	
 		</div>
 
