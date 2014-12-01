@@ -1150,6 +1150,8 @@ block-views-related-accessories-block #views-bootstrap-grid-1 .col {
 
 #block-views-other-maps-block .other_maps_img {
 	height: 220px;
+	display: table-cell;
+	vertical-align: middle;
 }
 
 .region-content .views-field-field-field-country-map {
@@ -1216,7 +1218,13 @@ block-views-related-accessories-block #views-bootstrap-grid-1 .col {
 }
 
 #views-bootstrap-grid-1 .views-field-title {
-	font-size: 16px;
+	font-size: 13px;
+	font-family: ps;
+	text-transform: uppercase;
+}
+
+#views-bootstrap-grid-1 .views-field-title-field {
+	font-size: 13px;
 	font-family: ps;
 	text-transform: uppercase;
 }
@@ -1436,7 +1444,40 @@ block-views-related-accessories-block #views-bootstrap-grid-1 .col {
 	margin-bottom: 5px;
 }
 
+.region-sidebar-second h2 {
+	font-size: 13px;
+	color: #888;
+	margin-bottom: 5px;
+	font-family: ps;
+}
 
+.region-sidebar-second li {
+	margin-left: 10px;
+	font-size: 12px;
+}
+
+.region-sidebar-second li a {
+	color: #555;
+}
+
+
+.region-sidebar-second input[type="checkbox"] {
+	margin-right: 5px !important;
+}
+
+.region-sidebar-second {
+	border-right: 1px solid #eee;
+}
+
+#block-block-6 h2 {
+	font-size: 20px;
+	color: #59b671;
+	font-family: ps;
+}
+
+#block-block-6 p {
+	display: none;
+}
 
 @media (min-width: 1200px) {
     .container {

@@ -199,9 +199,7 @@
                         <a href="<?php echo url('node/' . $nn); ?>"><?php print t('Buy License'); ?></a>
 							
 							<ul class="payment_logos">
-							<li><img src="<?php print $GLOBALS['base_url']; ?>/<?php print $directory; ?>/img/2checkout.png"></li>	
-							<li><img src="<?php print $GLOBALS['base_url']; ?>/<?php print $directory; ?>/img/paypal.png"></li>
-							<li><img src="<?php print $GLOBALS['base_url']; ?>/<?php print $directory; ?>/img/cashondelivery.png"></li>														
+							<li><img src="<?php print $GLOBALS['base_url']; ?>/<?php print $directory; ?>/img/2checkout.png"></li>															
 							</ul>
 							
                     </div>
