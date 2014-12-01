@@ -60,6 +60,7 @@ function gpsmapping_preprocess_html(&$variables) {
 	    $variables['footer_menu_1'] = block_get_blocks_by_region('footer_menu_1');
 	    $variables['footer_menu_2'] = block_get_blocks_by_region('footer_menu_2');
 	    $variables['footer_menu_3'] = block_get_blocks_by_region('footer_menu_3');
+	    $variables['social_icons'] = block_get_blocks_by_region('social_icons');	    
 	    $variables['header'] = block_get_blocks_by_region('header');
 	    $variables['login'] = block_get_blocks_by_region('login');
 

@@ -1,0 +1,4 @@
+name = Testimonials block
+description = Testimonials block
+core = 7.x
+Package = Custom

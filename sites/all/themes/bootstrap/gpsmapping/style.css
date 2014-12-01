@@ -349,14 +349,15 @@ h1 {
     font-family: ps;
 }
 .testimonial_content {
-	display: none;
     float: left; 
     width: 360px;
     margin-top: 80px;
+    margin-left: -999px;
 }
 
 #newboxes1 {
 	display: block;
+    margin-left: 0px;
 }
 
 .testimonial_content_text {

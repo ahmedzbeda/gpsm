@@ -6,9 +6,9 @@ dependencies[] = commerce_line_item
 dependencies[] = taxonomy
 dependencies[] = rules
 
-; Information added by Drupal.org packaging script on 2014-10-01
-version = "7.x-2.1-beta3"
+; Information added by Drupal.org packaging script on 2014-10-18
+version = "7.x-2.1-beta4"
 core = "7.x"
 project = "commerce_rules_extra"
-datestamp = "1412141634"
+datestamp = "1413651539"
 

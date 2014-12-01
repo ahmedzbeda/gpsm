@@ -91,10 +91,10 @@ $(document).ready(function(){
   function showonlyone(thechosenone) {
      $('div[name|="newboxes"]').each(function(index) {
           if ($(this).attr("id") == thechosenone) {
-               $(this).show(600);
+               $(this).animate({marginLeft: 0}, "slow");
           }
           else {
-               $(this).hide(600);
+               $(this).animate({marginLeft: "-999px"}, "fast");
           }
      });
   }
@@ -167,18 +167,12 @@ $(document).ready(function(){
                     <div id="newsletter">
                         <p> Sign up for our Newsletter</p>
                         <form name="newsletter" method="POST">
-                            <input id="input_text" type="text" name="email" value=" example@example.com"  />
+                            <input id="input_text" type="text" name="email" value="example@example.com"  />
                             <input id="sign_up" type="submit" value="sign up"  />
                         </form>
                     </div>
                     <div id="social_icons">
-                        <ul>
-                            <li> Follow Us</li>
-                            <li><a class="facebook" href="#">Facebook GPS mapping</a> </li>
-                            <li><a class="twitter" href="#">Twitter GPS mapping</a> </li>
-                            <li><a class="google" href="#"> Google GPS mapping </a></li>
-                            <li><a class="rss" href="#">RSS GPS mapping </a></li>
-                        </ul>
+						<?php echo render($social_icons); ?>
                     </div>
                 </div>
             </div>

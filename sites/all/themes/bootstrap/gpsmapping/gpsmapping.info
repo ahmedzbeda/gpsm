@@ -25,6 +25,7 @@ regions[buy_a_device]         = 'Home: Buy a device'
 regions[home_latest_maps_updates]         = 'Home: Latest Updates'
 regions[testimonials]         = 'testimonials'
 regions[postbody]         = 'Post Body Block'
+regions[social_icons]     = 'Social Icons'
 
 
 regions[help]           = 'Help'
