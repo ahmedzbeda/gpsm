@@ -128,7 +128,7 @@ $(document).ready(function(){
             <div id="top_header">
                 <div class="container">
 	                <div class="row nomr">
-		                <div class="col-md-4 col-md-offset-4 nom">
+		                <div class="col-sm-4 col-sm-offset-4 col-xs-4 nom">
 		                    <ul id="top_menu">
 			                    <?php if(!$logged_in) { ?>
 		                        <li><a href="#login" data-toggle="modal"><?php print t('Log In / Sign Up'); ?></a></li>
@@ -138,7 +138,7 @@ $(document).ready(function(){
 		                        <?php } ?>           		                        
 		                    </ul>
 		                </div>
-		                <div class="col-md-4 nom">
+		                <div class="col-sm-4 col-sm-offset-0 col-xs-8 nom">
 							<?php echo render($header) ?> 			                
 		                </div>
 	                </div>
@@ -162,7 +162,7 @@ $(document).ready(function(){
                 <div id="footer_menu_2" class="col-sm-3 col-xs-6">
 					<?php echo render($footer_menu_2) ?>
                 </div>
-                <div id="footer_3" class="col-sm-5 col-md-offset-2">
+                <div id="footer_3" class="col-sm-5 col-md-offset-2 col-xs-12">
 
                     <div id="newsletter">
                         <p> Sign up for our Newsletter</p>
@@ -182,10 +182,10 @@ $(document).ready(function(){
     <div id="bottom_footer">
         <div class="container">
             <div class="row" >
-                <div class=" col-sm-7 col-xs-12">
+                <div class=" col-sm-7 col-xs-6">
 						<?php echo render($footer_menu_3) ?>
                 </div>
-                <div class="col-sm-5  col-xs-12">
+                <div class="col-sm-5  col-xs-6">
                     <p>
                         <?php print t('All rights reserved © 2014. Design by <a title="Wazer IT" href="http://www.0.ly">Wazer IT</a>'); ?>
                     </p>

@@ -47,7 +47,7 @@
 
 
     <?php foreach ($items as $delta => $item): ?>
-      <div class="field-item col-sm-3"<?php print $item_attributes[$delta]; ?>>
+      <div class="field-item col-sm-3 col-xs-4"<?php print $item_attributes[$delta]; ?>>
       		<?php
 	      		$uri = $item['#item']['uri'];
 	      		$alt = $item['#item']['alt'];

@@ -186,7 +186,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="price col-md-5">
+                    <div class="price col-sm-5">
                         <div id="the_price">
                             <p>$<?php $value = strip_tags(render($content['field_product_reference'])); echo $value/100; ?></p>
                         </div>
@@ -195,7 +195,7 @@
                         </div>
  
                     </div>
-                    <div class="buy_button col-md-5 col-md-offset-2">
+                    <div class="buy_button col-sm-5 col-sm-offset-2">
                         <a href="<?php echo url('node/' . $nn); ?>"><?php print t('Buy License'); ?></a>
 							
 							<ul class="payment_logos">

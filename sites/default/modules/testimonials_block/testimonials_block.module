@@ -348,7 +348,7 @@ $image_file4 = file_load(variable_get('block_image_fid4', ''));
         </div>
     </div>                                                            
     
-    <div class="testimonial_track hidden-sm hidden-xs">
+    <div class="testimonial_track hidden-xs">
         
         <div class="dot">
             <div id="dot_1">
